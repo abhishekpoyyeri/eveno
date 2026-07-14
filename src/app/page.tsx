@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -35,49 +37,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-white/70 dark:bg-on-background/70 backdrop-blur-md shadow-sm">
-        <nav className="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
-          <div className="flex items-center gap-stack-lg">
-            <span className="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary-fixed cursor-pointer">
-              Eveno
-            </span>
-            <div className="hidden md:flex items-center gap-stack-lg">
-              <Link
-                className="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-primary transition-colors duration-300"
-                href="/services"
-              >
-                Services
-              </Link>
-              <Link
-                className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
-                href="/vendors"
-              >
-                Vendors
-              </Link>
-              <Link
-                className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
-                href="/packages"
-              >
-                Packages
-              </Link>
-              <Link
-                className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300"
-                href="/about"
-              >
-                About
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center gap-stack-md">
-            <button className="hidden sm:block font-body-md text-body-md text-primary font-semibold px-stack-md hover:text-secondary transition-colors">
-              Sign In
-            </button>
-            <button className="bg-primary-container text-on-primary font-body-md text-body-md px-8 py-3 rounded-full font-bold scale-105 transition-transform duration-200 hover:bg-primary">
-              Get Started
-            </button>
-          </div>
-        </nav>
-      </header>
+      <Header />
       <main className="pt-20">
         <section className="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop py-stack-lg overflow-hidden">
           <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -346,58 +306,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="bg-surface-container-lowest dark:bg-on-background w-full py-stack-lg border-t border-outline-variant dark:border-outline mt-section-gap">
-        <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-8">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <span className="font-display-lg text-headline-md text-primary dark:text-primary-fixed">
-              Eveno
-            </span>
-            <p className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant">
-              © 2024 Eveno Orchestration. All rights reserved.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-stack-lg">
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100"
-              href="/privacy"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100"
-              href="/terms"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100"
-              href="/contact"
-            >
-              Contact Us
-            </Link>
-            <Link
-              className="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100"
-              href="/careers"
-            >
-              Careers
-            </Link>
-          </div>
-          <div className="flex gap-4">
-            <a
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-primary hover:bg-primary hover:text-white transition-all"
-              href="#"
-            >
-              <span className="material-symbols-outlined text-sm">public</span>
-            </a>
-            <a
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-high text-primary hover:bg-primary hover:text-white transition-all"
-              href="#"
-            >
-              <span className="material-symbols-outlined text-sm">share</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
