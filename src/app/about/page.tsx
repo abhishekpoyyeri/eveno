@@ -7,7 +7,7 @@ export default function AboutUsPage() {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="pt-20 min-h-screen bg-background">
 
 <section className="relative h-[85vh] w-full flex items-center justify-center overflow-hidden">
 <div className="absolute inset-0 z-0">

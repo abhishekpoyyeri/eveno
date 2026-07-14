@@ -7,7 +7,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="pt-20 min-h-screen bg-background">
 
 <section className="relative w-full h-[442px] flex items-center overflow-hidden">
 <div className="absolute inset-0 z-0">

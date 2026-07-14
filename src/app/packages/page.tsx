@@ -7,9 +7,9 @@ export default function PackagesPage() {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="pt-20 min-h-screen bg-background">
 
-<section className="mb-section-gap text-center space-y-stack-md">
+<section className="pt-stack-lg mb-section-gap text-center space-y-stack-md">
 <h2 className="font-display-lg-mobile text-display-lg-mobile text-primary">Exquisite Packages for Every Occasion</h2>
 <p className="font-body-md text-body-md text-on-surface-variant max-w-xs mx-auto">
                 Indulge in a world of effortless luxury where every detail is orchestrated with professional precision and curated taste.

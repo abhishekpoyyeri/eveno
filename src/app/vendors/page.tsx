@@ -7,9 +7,9 @@ export default function VendorsPage() {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="pt-20 min-h-screen bg-background">
 
-<section className="mb-stack-lg">
+<section className="mb-stack-lg pt-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Vendor Directory</h2>
 <p className="text-on-surface-variant max-w-2xl mb-8">Curated excellence for your most significant moments. Connect with the industry's finest artisans.</p>
 

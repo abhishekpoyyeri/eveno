@@ -10,7 +10,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="pt-20 min-h-screen bg-background flex flex-col items-center justify-center px-margin-mobile md:px-0">
 
 <div className="fixed inset-0 z-0">
 <img alt="Luxury event orchestration background" className="w-full h-full object-cover brightness-[0.7]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNak5Ku1UB-MdPdj2rIDMTn3yz6nkVq9dxXd_h4lPdRdCBvk5cfHP0oob7UAdRCWqK6r0jyaQCVVzTfia99K9nmbNsX9W-9mAYhpuJCC2LBTO32VTHPUpGNN9wVvMYIO5pvU6mZlElM7vxrNBaZ1xD6PjmofZQQqGQQ6z4kivUeqkyL49TpNxIrHmEGDKq44_G6tV_aFh5X9dUizBAapkM_1-55G2qrz3whPuluOyTHxc__rHKAGTPpUTl3g1QhSPCE_uo4BOOwdA"/>
