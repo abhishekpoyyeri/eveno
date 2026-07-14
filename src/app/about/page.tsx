@@ -14,7 +14,7 @@ export default function AboutUsPage() {
 <img className="w-full h-full object-cover brightness-75" src="https://lh3.googleusercontent.com/aida/AP1WRLvtszfGGk9zrIbhqkyoYlTHV4h1i_JRBUZtNHriBKLLIsCOGEKoewGFV1beXQQLf0mVCnInKWe2cSiLXHbs4ovtVcrtAOY5k90GvXq0iryfG-mPtsQXjqbHib2jUJGkQTcrh3lNAIb5y9AOcUW16O1UiJ4zQKKMMituzoAF94YLSGk1ccPES6kWq3tW8wtlOFH6XeTqiL1g8JkSEL7bIRYhHb2AgIroMUun9h92im5bXPW_JS4Evv13HQ"/>
 </div>
 <div className="relative z-10 w-full max-w-container-max px-margin-mobile md:px-margin-desktop">
-<div className="glass-effect bg-white/70 dark:bg-inverse-surface/70 p-stack-lg md:p-16 rounded-2xl md:rounded-[32px] max-w-2xl shadow-xl border border-white/30 animate-fade-in-up">
+<div className="glass-effect bg-white/70 p-stack-lg md:p-16 rounded-2xl md:rounded-[32px] max-w-2xl shadow-xl border border-white/30 animate-fade-in-up">
 <span className="text-primary font-bold text-micro-label uppercase tracking-widest mb-4 block">Our Philosophy</span>
 <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 leading-tight">
                         Orchestrating Excellence
