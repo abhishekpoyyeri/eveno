@@ -57,8 +57,8 @@ export default function Home() {
                 and hosts. Discover premium venues and world-class vendors in
                 one curated space.
               </p>
-              <div className="relative mt-stack-lg max-w-2xl bg-surface-container-lowest p-4 rounded-3xl shadow-lg border border-outline-variant flex flex-col md:flex-row items-center gap-4">
-                <div className="flex-1 w-full px-4 border-b md:border-b-0 md:border-r border-outline-variant py-2">
+              <div className="relative mt-stack-lg max-w-2xl bg-surface-container-lowest p-2 md:p-3 rounded-3xl shadow-lg border border-outline-variant flex flex-col md:flex-row items-center">
+                <div className="flex-1 w-full px-6 border-b md:border-b-0 md:border-r border-outline-variant py-4 md:py-2">
                   <label className="block font-micro-label text-[10px] text-outline uppercase tracking-wider">
                     Event Type
                   </label>
@@ -68,7 +68,7 @@ export default function Home() {
                     type="text"
                   />
                 </div>
-                <div className="flex-1 w-full px-4 border-b md:border-b-0 md:border-r border-outline-variant py-2">
+                <div className="flex-1 w-full px-6 border-b md:border-b-0 md:border-r border-outline-variant py-4 md:py-2">
                   <label className="block font-micro-label text-[10px] text-outline uppercase tracking-wider">
                     Location
                   </label>
@@ -78,7 +78,7 @@ export default function Home() {
                     type="text"
                   />
                 </div>
-                <div className="flex-1 w-full px-4 py-2">
+                <div className="flex-1 w-full px-6 py-4 md:py-2">
                   <label className="block font-micro-label text-[10px] text-outline uppercase tracking-wider">
                     Date
                   </label>
@@ -87,9 +87,11 @@ export default function Home() {
                     type="date"
                   />
                 </div>
-                <button className="w-full md:w-auto bg-primary text-on-primary p-4 rounded-2xl flex items-center justify-center transition-transform active:scale-95">
-                  <span className="material-symbols-outlined">search</span>
-                </button>
+                <div className="w-full md:w-auto px-4 pb-4 md:pb-0 md:pr-2">
+                  <button className="w-full bg-primary text-on-primary p-4 rounded-2xl flex items-center justify-center transition-transform active:scale-95">
+                    <span className="material-symbols-outlined">search</span>
+                  </button>
+                </div>
               </div>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4 h-[600px] perspective-container">
