@@ -1,0 +1,136 @@
+.aboutPage {
+  padding: var(--space-4xl) 0;
+}
+
+.aboutHero {
+  max-width: 800px;
+  margin: 0 auto var(--space-5xl);
+  text-align: center;
+}
+
+.aboutHero h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-xl);
+}
+
+.aboutHero p {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.valuesSection {
+  margin-bottom: var(--space-5xl);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.valueCard {
+  padding: var(--space-2xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  text-align: center;
+  transition: box-shadow var(--transition-fast);
+}
+
+.valueCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.valueIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-lg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.valueCard h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.valueCard p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.contactSection {
+  padding-top: var(--space-2xl);
+}
+
+.contactCard {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-3xl);
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.contactCard h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.contactCard p {
+  font-size: var(--text-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2xl);
+}
+
+.contactMethods {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3xl);
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactLabel {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.contactLink {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 4px;
+}
+
+.contactLink:hover {
+  text-decoration-color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+  .contactMethods {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+}

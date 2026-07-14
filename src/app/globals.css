@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-background: #111c2d;
+  --color-outline: #777682;
+  --color-tertiary-fixed: #ffddb8;
+  --color-on-secondary-container: #fffbff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #3e3c8f;
+  --color-inverse-on-surface: #ecf1ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+  --color-on-surface-variant: #474651;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-on-primary-container: #9c9af4;
+  --color-on-error-container: #93000a;
+  --color-on-tertiary: #ffffff;
+  --color-secondary: #b90538;
+  --color-primary-fixed-dim: #c3c0ff;
+  --color-on-secondary: #ffffff;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-on-tertiary-container: #e49200;
+  --color-primary-container: #312e81;
+  --color-on-secondary-fixed-variant: #92002a;
+  --color-on-error: #ffffff;
+  --color-error: #ba1a1a;
+  --color-secondary-fixed-dim: #ffb2b7;
+  --color-inverse-primary: #c3c0ff;
+  --color-outline-variant: #c8c5d3;
+  --color-secondary-fixed: #ffdadb;
+  --color-surface-tint: #5654a8;
+  --color-error-container: #ffdad6;
+  --color-on-primary-fixed: #100563;
+  --color-background: #f9f9ff;
+  --color-tertiary-container: #543300;
+  --color-surface-bright: #f9f9ff;
+  --color-on-tertiary-fixed-variant: #653e00;
+  --color-tertiary: #372000;
+  --color-on-surface: #111c2d;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-variant: #d8e3fb;
+  --color-surface-container-highest: #d8e3fb;
+  --color-primary: #1a146b;
+  --color-on-secondary-fixed: #40000d;
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #cfdaf2;
+  --color-inverse-surface: #263143;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary-fixed: #e2dfff;
+  --color-secondary-container: #dc2c4f;
+
+  --spacing-section-gap: 80px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: 64px;
+  --spacing-stack-lg: 32px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+
+  --font-body-md: var(--font-inter);
+  --font-display-lg: var(--font-plus-jakarta);
+  --font-display-lg-mobile: var(--font-plus-jakarta);
+  --font-body-lg: var(--font-inter);
+  --font-headline-md: var(--font-plus-jakarta);
+  --font-micro-label: var(--font-inter);
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 800;
+
+  --text-display-lg-mobile: 32px;
+  --text-display-lg-mobile--line-height: 40px;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-display-lg-mobile--font-weight: 800;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 700;
+
+  --text-micro-label: 12px;
+  --text-micro-label--line-height: 16px;
+  --text-micro-label--letter-spacing: 0.1em;
+  --text-micro-label--font-weight: 700;
+}
+
+@layer base {
+  :root {
+    --background: #f9f9ff;
+    --foreground: #111c2d;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(49, 46, 129, 0.08);
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #312E81;
+  opacity: 0.1;
+  transform: translateX(-50%);
+}

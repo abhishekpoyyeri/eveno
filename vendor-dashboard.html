@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendor Dashboard | Eveno Premium</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#ffb2b7",
+                    "primary-fixed": "#e2dfff",
+                    "tertiary": "#372000",
+                    "secondary-fixed": "#ffdadb",
+                    "surface-tint": "#5654a8",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "secondary-container": "#dc2c4f",
+                    "surface-bright": "#f9f9ff",
+                    "surface-container-highest": "#d8e3fb",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-variant": "#d8e3fb",
+                    "on-error": "#ffffff",
+                    "primary-container": "#312e81",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-container-high": "#dee8ff",
+                    "on-primary-fixed": "#100563",
+                    "on-surface-variant": "#474651",
+                    "outline": "#777682",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#543300",
+                    "surface-dim": "#cfdaf2",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#3e3c8f",
+                    "inverse-surface": "#263143",
+                    "surface": "#f9f9ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "inverse-primary": "#c3c0ff",
+                    "outline-variant": "#c8c5d3",
+                    "on-primary-container": "#9c9af4",
+                    "on-background": "#111c2d",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e7eeff",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-surface": "#111c2d",
+                    "on-tertiary-container": "#e49200",
+                    "secondary": "#b90538",
+                    "on-secondary-fixed": "#40000d",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-secondary-fixed-variant": "#92002a",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9ff",
+                    "primary": "#1a146b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1.5rem"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "stack-md": "16px",
+                    "section-gap": "80px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "micro-label": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "micro-label": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        body {
+            background-color: #f9f9ff;
+            color: #111c2d;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-14 md:h-20 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-primary" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tight text-primary">Eveno</h1>
+</div>
+<nav class="hidden md:flex items-center gap-stack-lg">
+<a class="text-primary font-bold transition-all duration-300 hover:scale-105" href="#">Dashboard</a>
+<a class="text-on-surface-variant transition-all duration-300 hover:scale-105 hover:text-primary" href="#">Events</a>
+<a class="text-on-surface-variant transition-all duration-300 hover:scale-105 hover:text-primary" href="#">Vendors</a>
+<a class="text-on-surface-variant transition-all duration-300 hover:scale-105 hover:text-primary" href="#">Inbox</a>
+</nav>
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a luxury catering company owner, wearing a refined chef's jacket in a minimalist, high-end kitchen studio. Soft sunlight filters through large windows, highlighting the clean lines and white marble surfaces. The mood is professional and sophisticated, mirroring the brand's premium hospitality aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXdvC0Cuzgx3ZwRpGGrQPp5TGmKI6dLK_55vzZztmDgj49gb26yogIC4-p7bEVa3iuuyRnGyxS-bbYh6hB7Q6Qvdlqb0ICxY9ol_ujOAZ9CJ4Y4ot8QD_6IBjjFHdSn1NYdarqpLIpBiVRjkQgqLEw8JzqHcC1ZlduCy30YS00X-s18VXmW2H6bVQm8fv-rXAMVGOirXJ1BnDUK9I4maWhZ4-eDQe7zBNHRMgsvXJbghT4azmYg4ex-I7K1V4HxmWl6Roe436wfD4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile) -->
+<div class="fixed inset-0 bg-black/20 z-[55] hidden backdrop-blur-sm" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<aside class="h-full w-80 fixed left-0 top-0 z-[60] bg-surface shadow-xl -translate-x-full transition-transform duration-300 flex flex-col py-stack-lg" id="nav-drawer">
+<div class="px-margin-mobile mb-stack-lg flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a premium business logo featuring elegant serif typography and minimalist geometric shapes, rendered in deep indigo and gold. The background is a clean, textured pearl white paper. The overall visual style is high-end, artistic, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDdWDbYy19cjBy-EtZ2MnDz4RktleBCsFYWsiomJEw5VLjP2-cqa1NFbwwmfir5VrQJvQV_BzmOqZUhOq6NhWf1XasKhe9lIPLiJV3LkyCB4VVogNdZMRZ_7PEU4d4lo036ZmFI7cSYrtj3Euzu_fCusxZ8I_sYO8wVDBkpVgCWQincNpU6modFIGIM3xwNKVUN7X-FYn6VoC2T688FBJ91DD7suwETiFYXCrnx-_6L9xQ6c_Sg02L908bejxDhbVtV40vmJzhC3I"/>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md leading-tight text-primary">Artisanal Catering</h3>
+<p class="font-micro-label text-micro-label text-on-surface-variant uppercase tracking-widest">Premium Vendor</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-primary-fixed text-on-primary-fixed rounded-full mx-2 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span>Directory</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Calendar</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Contracts</span>
+</a>
+<a class="text-on-surface-variant mx-2 px-4 py-3 hover:bg-surface-container-high transition-colors rounded-full flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</aside>
+<main class="pt-24 md:pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div>
+<span class="font-micro-label text-micro-label text-secondary uppercase tracking-widest mb-stack-sm block">Vendor Portal</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container">Welcome back, Artisanal Catering</h2>
+</div>
+<div class="flex gap-stack-sm">
+<button class="bg-primary hover:scale-105 active:scale-95 transition-all text-white px-8 py-3 rounded-full font-bold flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                        New Listing
+                    </button>
+</div>
+</div>
+</section>
+<!-- Summary Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<div class="glass-card p-8 rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-lg">
+<div class="p-3 bg-primary-fixed rounded-xl text-primary">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<span class="text-secondary font-bold text-micro-label">+12%</span>
+</div>
+<h4 class="text-on-surface-variant font-micro-label uppercase tracking-widest mb-1">New Leads</h4>
+<p class="font-display-lg text-display-lg-mobile text-primary-container">12</p>
+</div>
+<div class="glass-card p-8 rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-lg">
+<div class="p-3 bg-tertiary-fixed rounded-xl text-tertiary">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<span class="text-on-tertiary-container font-bold text-micro-label">Next: Sat</span>
+</div>
+<h4 class="text-on-surface-variant font-micro-label uppercase tracking-widest mb-1">Upcoming Events</h4>
+<p class="font-display-lg text-display-lg-mobile text-primary-container">8</p>
+</div>
+<div class="glass-card p-8 rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-lg">
+<div class="p-3 bg-secondary-fixed rounded-xl text-secondary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-secondary font-bold text-micro-label">Record High</span>
+</div>
+<h4 class="text-on-surface-variant font-micro-label uppercase tracking-widest mb-1">Revenue</h4>
+<p class="font-display-lg text-display-lg-mobile text-primary-container">$45,200</p>
+</div>
+</section>
+<!-- Main Dashboard Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Recent Inquiries (Bento Style Card) -->
+<section class="lg:col-span-2 glass-card rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.04)]">
+<div class="p-8 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary-container">Recent Inquiries</h3>
+<a class="text-secondary font-bold text-micro-label hover:underline" href="#">VIEW ALL</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-8 py-4 font-micro-label text-on-surface-variant uppercase">Client Name</th>
+<th class="px-8 py-4 font-micro-label text-on-surface-variant uppercase">Event Type</th>
+<th class="px-8 py-4 font-micro-label text-on-surface-variant uppercase">Date</th>
+<th class="px-8 py-4 font-micro-label text-on-surface-variant uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young bride-to-be, elegantly dressed in a contemporary silk gown, looking at venue photos on a tablet. The lighting is soft and ethereal, set against a backdrop of a high-end bridal boutique with minimalist decor. The image communicates a sense of luxury, anticipation, and detailed event planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoN7_RS6kFxkG88nx5QAQ1lfeukb6eEH42hEIKAbSLXvMO75pz3l-ubYUOf_k3ssqP8nRI0DCd5XyVBUL7HOfrGBM1k-FqDXlrlQgTT752B9P5p9yMkYLBzRDItEDNhbkedHRgBoErpCqofcuvMhc0ovUILFs65Jc2SwdV7Xw9WptLUEAnz-HVCmvu0cGS1leo_bULuPjmF1YQnKh4B_mOOJ-iH9nz1m4IVXdfD2P24pwDbaRRRRUX1Q3k2ta3IW6z52Zs1kFo3rM"/>
+</div>
+<span class="font-bold text-primary">Eleanor Vance</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Wedding Reception</td>
+<td class="px-8 py-6 text-on-surface-variant">Sep 24, 2024</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-primary text-white px-5 py-2 rounded-full font-bold text-micro-label hover:scale-105 transition-transform">RESPOND</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A confident corporate executive in a tailored charcoal suit, standing in a modern glass skyscraper lobby. The environment is sleek, featuring polished stone floors and expansive views of a metropolitan skyline at dusk. The mood is professional, high-stakes, and elite, reflecting a premium corporate event atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADbdIWh7MFO46kw3pXdHRPVAy11nhuA6uLS9gskGvOxwDolO1jrav3IBqk2yYqqrslf_nBaC6rLyvXd7ClBC09AtuW3lRvIIttRj-5I7R6onPIb5Swhb-yuoGbHU00ZXl_Olw3H2c2z4remvdhELI-RMUnnMiiRYnc64-HkeVgc5oQlE2bYxfSTGpp_lfcWbg_Nm_zTi5tuh1SOcXTGBF2-zgoZpGAA5_mw6IS1WJIuuxqhRB_4gntbKkf6tXWL4Qa_Do7DfxxbRc"/>
+</div>
+<span class="font-bold text-primary">Marcus Thorne</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Gala Dinner</td>
+<td class="px-8 py-6 text-on-surface-variant">Oct 12, 2024</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-primary text-white px-5 py-2 rounded-full font-bold text-micro-label hover:scale-105 transition-transform">RESPOND</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylish woman in an avant-garde cocktail dress, laughing while holding a crystal glass at a sophisticated rooftop party. The background shows a vibrant city at night with blurred bokeh lights. The visual style is chic, cinematic, and full of life, embodying the effortless luxury of a boutique celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtiyn85FZX8u_Dq5E8Bnfp5H0xhyYBN4dDeERCFdScx3wYRPWNFF_hVakKmUu46Sb8UU7p7b_2Szpi6oQpGqrJjlRrByBP6mKpBe8ixQjlWmmyIMbwrZU-7f3eCfKiWR_dIiOsPrkGuhoXJH-OiDY0pbqEOtmIfg2iyMTvAg0T8GOAw1FSe2KEyqga6r9d3dSI0Q0FPvNVxu1o-d8uQ4HyOhdkPjMyL3wf3vD1aie7bpiuRZFDW2TlUxtKOumvEovFk9PKDAGWSto"/>
+</div>
+<span class="font-bold text-primary">Sophia Chen</span>
+</div>
+</td>
+<td class="px-8 py-6 text-on-surface-variant">Anniversary</td>
+<td class="px-8 py-6 text-on-surface-variant">Nov 05, 2024</td>
+<td class="px-8 py-6 text-right">
+<button class="bg-primary text-white px-5 py-2 rounded-full font-bold text-micro-label hover:scale-105 transition-transform">RESPOND</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Active Projects Section -->
+<section class="glass-card rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] h-full">
+<div class="p-8 border-b border-outline-variant/20">
+<h3 class="font-headline-md text-headline-md text-primary-container">Active Projects</h3>
+</div>
+<div class="p-8 flex flex-col gap-stack-md">
+<!-- Project Item -->
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An exquisite, multi-layered wedding cake featuring delicate gold leaf accents and edible floral decorations, displayed on a minimalist marble pedestal. The surrounding environment is a bright, high-end venue with soft focus backgrounds. The lighting is warm and inviting, emphasizing the craftsmanship and luxury of professional artisanal catering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIa-kKy79rG10BnoA1k8LksXJ5kqcD_C1yuHa0TiAYyt_4d3jGWjkDKqEV-Fs5CMkeWRb0bXHhyTlb6-O9OSlaK_wyd-tSK-2JhoYKuHVUJ8soU4pABewz1xlGV2FfMkOKa8JRvBwF4Yv7EVaMCHR3yIhlIYMBsH_IVsPBCEhnZwCshtZcovi3gBn2Sg9niszRLx2_-PddC4M2w1Exn_HfNNJvqJKA-LHzyRWz7bsO_tgWakK0E3WBkdyLaR1xzNsfH4jRShLRToo"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h5 class="font-bold text-primary">The Hilton Gala</h5>
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-2">350 Guests • Plated Dinner</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+<!-- Project Item -->
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A beautifully arranged spread of artisanal hors d'oeuvres on a sleek black slate board, featuring micro-greens and vibrant edible flowers. The setting is a professional studio with soft, directional lighting that creates elegant highlights and deep, rich shadows. The mood is sophisticated and culinary-focused, representing premium vendor quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_DWEOhX9J2LV_Q15gWS8w0z-wsQEAgaG9MA-_hrSG7XKoojwRrI9M1QrCOHkQkarp0Gl6ngqc_OkoVt_r9c5Bb9vB4lt9T0EvMTnPTqeS7IYRfunxqxy3w0m9J5bUALIZTIZZvTH6DtuTqdrZRQCBkdS00rZ52P2oH6-ak3H9Clrs_zTPOHVg6pXmhMswKJTAzZV9jUAG-N8B3w8zuWqS5A5oNj1lpEhuofSd2kQhdBjvt42uyJvZyIVX8dvKZKelEdHOfT0F3CQ"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h5 class="font-bold text-primary">Modern Art Launch</h5>
+<span class="bg-tertiary-fixed-dim/20 text-on-tertiary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter">Pending</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-2">120 Guests • Canapés</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+<!-- Project Item -->
+<div class="flex gap-4 group cursor-pointer">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A refined table setting for a luxury private dinner, featuring fine bone china, silver cutlery, and crystal glassware on a crisp white linen tablecloth. Minimalist floral centerpieces in muted tones add a touch of nature. The lighting is warm and candlelit, creating an intimate, exclusive atmosphere for high-end hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiGThOgdC0MAJD2xzo2vO-8zNGFdcOxhJuIwM1nUxSCAb3FInsL18sCWMsnx7_NLMpYBFEIbHxiEKnCPA4ZnfL8p8-SeCsFmwPE7o5kxG30JKpoP0nM2ge2W_0HzcI-xY4S3eOZ5gQwUVZgZNEwaiIwnhfrBe8dSP6dgBi3KHMMEO--lmbR7sX1IeTfikGEpgMckVyBUvgoM1pKnntPVGYEXoBNbPMGGGr5f6Gc2PySpGcQPwUtM9tkuEfx6umiLnc60onqDZXHEQ"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h5 class="font-bold text-primary">Riverside Private</h5>
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter">Active</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-2">24 Guests • Tasting Menu</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/70 backdrop-blur-md flex justify-around items-center py-stack-sm border-t border-outline-variant/20 z-50 rounded-t-xl shadow-[0px_-10px_30px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-secondary font-bold gap-1 scale-102 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-micro-label">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="text-micro-label">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-micro-label">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant gap-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-micro-label">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full py-section-gap mt-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-lg">
+<h2 class="font-display-lg text-display-lg text-surface-container-lowest">Eveno</h2>
+<div class="flex flex-wrap justify-center gap-stack-md text-surface-variant font-body-md">
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Help Center</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Contact Us</a>
+</div>
+<p class="text-surface-variant font-body-md">© 2024 Eveno Platform. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('nav-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const isOpen = drawer.classList.contains('translate-x-0');
+            
+            if (isOpen) {
+                drawer.classList.remove('translate-x-0');
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            } else {
+                drawer.classList.add('translate-x-0');
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+        }
+    </script>
+</body></html>

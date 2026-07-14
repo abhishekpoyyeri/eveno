@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eveno | Premium Event Orchestration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#372000",
+                        "surface-container-high": "#dee8ff",
+                        "outline-variant": "#c8c5d3",
+                        "error": "#ba1a1a",
+                        "on-surface": "#111c2d",
+                        "secondary": "#b90538",
+                        "secondary-fixed": "#ffdadb",
+                        "on-surface-variant": "#474651",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e7eeff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary-fixed-variant": "#92002a",
+                        "inverse-on-surface": "#ecf1ff",
+                        "tertiary-fixed": "#ffddb8",
+                        "outline": "#777682",
+                        "surface": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#9c9af4",
+                        "secondary-container": "#dc2c4f",
+                        "primary-container": "#312e81",
+                        "on-secondary-fixed": "#40000d",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#111c2d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary-container": "#543300",
+                        "surface-bright": "#f9f9ff",
+                        "surface-variant": "#d8e3fb",
+                        "inverse-surface": "#263143",
+                        "primary": "#1a146b",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary-container": "#e49200",
+                        "on-primary-fixed-variant": "#3e3c8f",
+                        "surface-tint": "#5654a8",
+                        "surface-container-low": "#f0f3ff",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-highest": "#d8e3fb",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#100563",
+                        "on-tertiary-fixed": "#2a1700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "micro-label": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "micro-label": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .input-focus-effect:focus {
+            box-shadow: 0 0 0 4px rgba(49, 46, 129, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden">
+<!-- Auth Layout Suppression (Navigation suppressed for focused task) -->
+<main class="relative min-h-screen flex flex-col justify-center items-center px-margin-mobile">
+<!-- Background Asset -->
+<div class="fixed inset-0 z-0">
+<img alt="Luxury event orchestration background" class="w-full h-full object-cover brightness-[0.7]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNak5Ku1UB-MdPdj2rIDMTn3yz6nkVq9dxXd_h4lPdRdCBvk5cfHP0oob7UAdRCWqK6r0jyaQCVVzTfia99K9nmbNsX9W-9mAYhpuJCC2LBTO32VTHPUpGNN9wVvMYIO5pvU6mZlElM7vxrNBaZ1xD6PjmofZQQqGQQ6z4kivUeqkyL49TpNxIrHmEGDKq44_G6tV_aFh5X9dUizBAapkM_1-55G2qrz3whPuluOyTHxc__rHKAGTPpUTl3g1QhSPCE_uo4BOOwdA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-primary/40"></div>
+</div>
+<!-- Login Container -->
+<div class="relative z-10 w-full max-w-[440px] animate-in fade-in slide-in-from-bottom-8 duration-700">
+<!-- Branding Header -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white tracking-tight">Eveno</h1>
+<p class="font-body-md text-white/80 mt-1">Orchestrating Excellence</p>
+</div>
+<!-- Login Card -->
+<div class="glass-card rounded-[32px] p-8 md:p-10 shadow-2xl overflow-hidden relative">
+<!-- Atmospheric Glow -->
+<div class="absolute -top-24 -left-24 w-48 h-48 bg-primary/20 rounded-full blur-[80px]"></div>
+<header class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Welcome Back</h2>
+<p class="font-body-md text-on-surface-variant">Sign in to manage your luxury events.</p>
+</header>
+<form class="space-y-5" onsubmit="return false;">
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="font-micro-label text-micro-label text-outline uppercase tracking-widest ml-1" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full h-14 pl-12 pr-4 bg-white/50 border-outline-variant rounded-xl focus:ring-primary focus:border-primary transition-all duration-300 input-focus-effect placeholder:text-outline-variant" id="email" placeholder="name@evently.com" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="font-micro-label text-micro-label text-outline uppercase tracking-widest" for="password">Password</label>
+<a class="text-xs font-bold text-primary hover:text-secondary transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full h-14 pl-12 pr-12 bg-white/50 border-outline-variant rounded-xl focus:ring-primary focus:border-primary transition-all duration-300 input-focus-effect" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-outline" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-14 mt-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group">
+                        Sign In
+                        <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-stack-lg flex items-center">
+<div class="flex-grow border-t border-outline-variant/30"></div>
+<span class="px-4 font-micro-label text-micro-label text-outline whitespace-nowrap">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant/30"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center h-12 bg-white border border-outline-variant rounded-xl hover:bg-surface transition-colors duration-200 group">
+<svg class="w-5 h-5 mr-2" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.26.81-.58z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-semibold">Google</span>
+</button>
+<button class="flex items-center justify-center h-12 bg-black text-white rounded-xl hover:bg-zinc-800 transition-colors duration-200 group">
+<svg class="w-5 h-5 mr-2 fill-current" viewbox="0 0 24 24">
+<path d="M17.05 20.28c-.96 0-2.04-.6-3.23-.6-1.21 0-2.31.6-3.16.6-1.5 0-4.04-2.18-4.04-5.71 0-3.32 2.21-5.11 4.14-5.11.96 0 1.77.56 2.39.56.58 0 1.5-.6 2.56-.6 1.11 0 2.51.58 3.25 1.62-2.26 1.19-1.9 4.17.43 5.16-.76 1.76-1.78 3.51-3.34 4.08zM14.54 6.72c-.51.64-1.39 1.1-2.21 1.1-.11 0-.21-.01-.29-.02.03-1.01.55-1.99 1.15-2.67.59-.68 1.54-1.16 2.37-1.16.09 0 .19.01.27.02-.02 1.05-.62 2.05-1.29 2.73z"></path>
+</svg>
+<span class="text-sm font-semibold">Apple</span>
+</button>
+</div>
+</div>
+<!-- Global Footer Link -->
+<div class="mt-8 text-center">
+<p class="font-body-md text-white/90">
+                    Don't have an account? 
+                    <a class="font-bold text-white underline underline-offset-4 decoration-secondary hover:text-secondary transition-colors ml-1" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+<!-- Floating Interactive Elements -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 text-white/40 flex gap-6 text-[10px] font-micro-label uppercase tracking-[0.2em] z-10">
+<span>Privacy</span>
+<span>Terms</span>
+<span>Support</span>
+</div>
+</main>
+<script>
+        // Micro-interactions and focus effects
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.group').classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.group').classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Simple button active states
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

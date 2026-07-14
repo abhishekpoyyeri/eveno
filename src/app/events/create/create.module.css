@@ -1,0 +1,178 @@
+.createPage {
+  padding: var(--space-4xl) 0;
+}
+
+.wizardCard {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.wizardHeader {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-warm);
+  border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stepIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.stepIndicator.active {
+  opacity: 1;
+}
+
+.stepNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.stepIndicator.active .stepNum {
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+}
+
+.stepLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stepLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 16px;
+  transform: translateY(-10px);
+}
+
+.wizardBody {
+  padding: var(--space-3xl) var(--space-xl);
+  min-height: 400px;
+}
+
+.stepContent {
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s var(--ease-out);
+}
+
+.stepContent h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.stepContent p {
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  font-size: var(--text-sm);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.servicesSelectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.serviceCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--text-sm);
+}
+
+.serviceCheckbox:hover {
+  background: var(--color-bg-warm);
+}
+
+.serviceCheckbox input:checked + span {
+  font-weight: 500;
+}
+
+.summaryBox {
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.summaryItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.summaryLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.summaryVal {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.wizardFooter {
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  background: var(--color-bg-warm);
+  border-radius: 0 0 calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px);
+}
+
+@media (max-width: 768px) {
+  .formGrid, .servicesSelectGrid {
+    grid-template-columns: 1fr;
+  }
+}

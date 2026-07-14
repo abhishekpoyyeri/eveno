@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eveno Admin - Platform Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#dc2c4f",
+                    "on-primary-fixed-variant": "#3e3c8f",
+                    "on-surface-variant": "#474651",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#9c9af4",
+                    "surface": "#f9f9ff",
+                    "inverse-surface": "#263143",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#100563",
+                    "tertiary": "#372000",
+                    "secondary-fixed": "#ffdadb",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary-fixed-dim": "#ffb2b7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#e49200",
+                    "surface-container-highest": "#d8e3fb",
+                    "surface-bright": "#f9f9ff",
+                    "on-surface": "#111c2d",
+                    "primary-fixed": "#e2dfff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "surface-variant": "#d8e3fb",
+                    "on-secondary-fixed-variant": "#92002a",
+                    "background": "#f9f9ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "secondary": "#b90538",
+                    "on-background": "#111c2d",
+                    "surface-tint": "#5654a8",
+                    "outline": "#777682",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#312e81",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#40000d",
+                    "surface-dim": "#cfdaf2",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "primary": "#1a146b",
+                    "outline-variant": "#c8c5d3",
+                    "inverse-primary": "#c3c0ff",
+                    "tertiary-fixed": "#ffddb8",
+                    "tertiary-container": "#543300",
+                    "surface-container-high": "#dee8ff",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container": "#e7eeff",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "32px",
+                    "section-gap": "80px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "micro-label": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "micro-label": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FAFAFA;
+            background-image: radial-gradient(at 0% 0%, rgba(226, 223, 255, 0.2) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(255, 178, 183, 0.1) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .pearl-shadow {
+            shadow: 0px 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .sidebar-transition {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-md fixed top-0 w-full z-40 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary hover:scale-105 transition-transform duration-200" id="menu-toggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary">Eveno Admin</h1>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="hidden md:flex items-center gap-stack-lg mr-stack-lg">
+<span class="text-primary font-bold">Overview</span>
+<span class="text-on-surface-variant hover:scale-105 transition-transform duration-200 cursor-pointer">Live</span>
+<span class="text-on-surface-variant hover:scale-105 transition-transform duration-200 cursor-pointer">Reports</span>
+<span class="text-on-surface-variant hover:scale-105 transition-transform duration-200 cursor-pointer">Alerts</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate executive with sharp focus, wearing a tailored navy suit against a soft-focus minimalist grey office background. The lighting is bright and high-key, reflecting a premium and trustworthy platform director persona. 8k resolution, photorealistic cinematic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ImLHll_h-qDBS4z40lPK9ZIMdfh-UrymXWzkDeu-ENp3One2TLg73O46msBJJ0eL5TJawqFkRUuQOxIu2KscjLFRjel_VnorjolCQ_7U55iOCfa2vgQAAS3Q7txGrqSsBMXmYEDEHIuQMAXjfpe3yHfXzBN99NztDkRrKSHlelAh5BOsQAVnJdCa1AO8PHlUa4JqP2zKYKl_OnD81ZkcSWf_Ok5jfvyvNnjeeAdYyeXIh3ggKQRTr6wa9EX2gFVHkk-3kehVioM"/>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Sidebar) -->
+<aside class="h-full w-80 fixed left-0 top-0 z-50 bg-surface dark:bg-inverse-surface shadow-xl flex flex-col py-stack-lg -translate-x-full md:translate-x-0 sidebar-transition" id="sidebar">
+<div class="px-8 mb-stack-lg flex justify-between items-center">
+<h2 class="font-display-lg text-display-lg-mobile text-primary">Eveno</h2>
+<button class="md:hidden text-on-surface-variant" id="menu-close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 mb-stack-lg">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A refined close-up portrait of Alexander Vance, a platform director. He has an approachable but authoritative expression, neatly groomed hair, and is wearing a high-quality white dress shirt. Soft, natural morning light spills from a window, highlighting a sophisticated and clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Orpjwi9aK2iK3H44AzzmPNxSLTR7jRm9-PFl2mkh9cWPEUJBQSzqtObYPALyrp9n5wTxluDT6VSi6j_3IpZxxIY9NutcMGBX5-HEJikuadUx-ZD6g8e0_c4WQRrZa8S2QsHoTgFDQ74m45acRMM8enNDtqEc7sfX8zFdDaEHRYGWHEwmN9dIKoDCC5j66JKNR9PR7Cu1btmFXstduNjcgFd8WlzcoKPvVgMp1CjZ9o-JxdR095QXAHbEGEgALjfNdmwWkjoHR6U"/>
+</div>
+<div>
+<p class="font-bold text-primary">Alexander Vance</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Platform Director</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="bg-primary-container text-on-primary-container rounded-xl mx-2 px-4 py-3 flex items-center gap-4 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-bold">Users</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl mx-2 px-4 py-3 flex items-center gap-4 transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span>Vendors</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl mx-2 px-4 py-3 flex items-center gap-4 transition-all" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span>Events</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl mx-2 px-4 py-3 flex items-center gap-4 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Finance</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-xl mx-2 px-4 py-3 flex items-center gap-4 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="p-4 rounded-xl border border-outline-variant/30 text-xs text-on-surface-variant">
+<p class="font-bold text-primary mb-1">Premium Tier</p>
+<p>System health: 99.9% stable</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-80 pt-24 px-margin-mobile md:px-margin-desktop pb-24">
+<!-- Header & Stats -->
+<section class="mb-section-gap">
+<div class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary">Dashboard Overview</h2>
+<p class="text-on-surface-variant">Orchestrating platform excellence and vendor synergy.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Stat Card 1 -->
+<div class="glass-card rounded-2xl p-stack-lg shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-white/50 hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-md">
+<span class="text-on-surface-variant font-micro-label uppercase">Total Users</span>
+<div class="p-2 rounded-full bg-primary/5 text-primary">
+<span class="material-symbols-outlined text-lg">group</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-display-lg-mobile font-display-lg text-primary">12,842</h3>
+<span class="text-secondary text-sm font-bold flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span> 8%
+                        </span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="glass-card rounded-2xl p-stack-lg shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-white/50 hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-md">
+<span class="text-on-surface-variant font-micro-label uppercase">Active Events</span>
+<div class="p-2 rounded-full bg-secondary/5 text-secondary">
+<span class="material-symbols-outlined text-lg">sensors</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-display-lg-mobile font-display-lg text-primary">452</h3>
+<span class="text-secondary text-sm font-bold flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span> 12%
+                        </span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="glass-card rounded-2xl p-stack-lg shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-white/50 hover:scale-[1.02] transition-transform duration-300">
+<div class="flex justify-between items-start mb-stack-md">
+<span class="text-on-surface-variant font-micro-label uppercase">Platform Revenue</span>
+<div class="p-2 rounded-full bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-lg">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<h3 class="text-display-lg-mobile font-display-lg text-primary">$1.2M</h3>
+<span class="text-secondary text-sm font-bold flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span> 4%
+                        </span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Pending Vendor Approvals (Large Card) -->
+<section class="lg:col-span-2">
+<div class="glass-card rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-white/50 overflow-hidden">
+<div class="p-stack-lg border-b border-outline-variant/10 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Pending Vendor Approvals</h3>
+<button class="text-sm text-primary font-bold hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant font-micro-label uppercase bg-surface-container-low/50">
+<th class="px-stack-lg py-4">Vendor Name</th>
+<th class="px-stack-lg py-4">Category</th>
+<th class="px-stack-lg py-4">Location</th>
+<th class="px-stack-lg py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-stack-lg py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxury catering company's professional logo and sample hors d'oeuvres. The imagery is bright, elegant, and uses high-end styling with white linens and gold accents, fitting the sophisticated modernism of the Eveno brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwV4Z2vMXmG_oUA8QDSgSFB4bJGxUk0K4odGJNctqct8wNpVsnTcJwl7Aeu-T_D0eK0kFVOeeVlkSVpWdu0RIM_bmY3DLND1UycGMCqL9o1YeukFNffy6AdyoSOGG1BmbM-nkXsu9Lc6F4g9DeDsrWVe7-k8djiNo95pHxdM_yBYFB92RMCJA3BWplBV--ZiU3xc3s9Y-7CsdwL25YywNycOa5SOjLDQr7CwUKBEmBhjfs0r68kEAL_yS0yFtpccmDxMiWQ9yb5Hc"/>
+</div>
+<span class="font-bold text-primary">Royal Culinary Arts</span>
+</div>
+</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">Catering &amp; Fine Dining</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">Paris, FR</td>
+<td class="px-stack-lg py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-2 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all">Approve</button>
+<button class="px-4 py-2 rounded-full border-2 border-outline text-outline font-bold text-xs hover:border-error hover:text-error transition-all">Reject</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-stack-lg py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-end audio-visual production company's equipment setup in a minimalist showroom. Includes sleek black speakers, atmospheric purple and blue accent lighting, and a clean technological aesthetic that feels modern and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApbTFHhF52wznju2O76xU0C_-zwuwohYAdwO49fxFvEDaQyMsMDBUKXKZkN917sVbLSuugVEUIrVL4b19AGujdgU2oedXxe93exrHwqg0BXO3PXIybOviVxIQtIp_WQRn-qRQB4JWsLBqGbGsnawkkRGaBD9mCrtM8piyfUxRlCqKyLBvrzNnJv8NLD8yvO8LEqa1iHGihmNpi6zrmnGK89nO7BRtqk8lEkJz7vScJF89vOa7YTRMN3bGgYSPTyiVLoxTaSvbKaJQ"/>
+</div>
+<span class="font-bold text-primary">Lumina AV Systems</span>
+</div>
+</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">AV &amp; Lighting</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">London, UK</td>
+<td class="px-stack-lg py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-2 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all">Approve</button>
+<button class="px-4 py-2 rounded-full border-2 border-outline text-outline font-bold text-xs hover:border-error hover:text-error transition-all">Reject</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-stack-lg py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Floral design studio showcasing architectural orchid arrangements. The background is a crisp white minimalist space, allowing the vibrant colors of the exotic flowers to pop. The lighting is soft and diffused, emphasizing luxury and artistic detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp-gy2HmoLI1uHzOQd8p5pMGsFgGHlUgHzHdqGhVvRNRINqew7JLxBf1ORUJRzNAHhqkQ5gi1w80ScbnMNCATXTuW2yaNUfuVxTCt555RC4rf7yK-7ofCBP7NMUgGHyQJ25nZeRQky_dhJNnv90meilmIC-PFz0ilKNSiGQHTg-6vWiB9XH__ZkKRNTMFZR3mhK-SBUpWZLcB_N_dvFlisjMMup9OXb6H3v1k_HIkeuNiqBrjcgf09kmUNrF_JVUMySQJrTTd30w4"/>
+</div>
+<span class="font-bold text-primary">Bloom &amp; Structure</span>
+</div>
+</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">Floral &amp; Decor</td>
+<td class="px-stack-lg py-5 text-on-surface-variant">New York, US</td>
+<td class="px-stack-lg py-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="px-4 py-2 rounded-full border-2 border-primary text-primary font-bold text-xs hover:bg-primary hover:text-white transition-all">Approve</button>
+<button class="px-4 py-2 rounded-full border-2 border-outline text-outline font-bold text-xs hover:border-error hover:text-error transition-all">Reject</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- System Alerts (Side Column) -->
+<section class="lg:col-span-1">
+<div class="glass-card rounded-2xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-white/50 h-full">
+<div class="p-stack-lg border-b border-outline-variant/10">
+<h3 class="font-headline-md text-headline-md text-primary">System Health</h3>
+</div>
+<div class="p-stack-lg flex flex-col gap-stack-md">
+<!-- Alert 1 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border-l-4 border-primary">
+<div class="text-primary">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">Scheduled Maintenance</p>
+<p class="text-xs text-on-surface-variant mt-1">Global DB optimization starting at 02:00 UTC.</p>
+<p class="text-[10px] text-outline mt-2">2 hours ago</p>
+</div>
+</div>
+<!-- Alert 2 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border-l-4 border-secondary">
+<div class="text-secondary">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">High Traffic Alert</p>
+<p class="text-xs text-on-surface-variant mt-1">Vendor onboarding portal seeing 3x normal load.</p>
+<p class="text-[10px] text-outline mt-2">45 minutes ago</p>
+</div>
+</div>
+<!-- Alert 3 -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low border-l-4 border-outline">
+<div class="text-outline">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="font-bold text-primary text-sm">API Sync Complete</p>
+<p class="text-xs text-on-surface-variant mt-1">Payment gateway integration verified successfully.</p>
+<p class="text-[10px] text-outline mt-2">12 minutes ago</p>
+</div>
+</div>
+</div>
+<div class="mt-auto p-stack-lg">
+<div class="rounded-xl bg-primary-container p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+<span class="text-white text-xs font-bold uppercase tracking-widest">All Systems Operational</span>
+</div>
+<span class="material-symbols-outlined text-white/50 text-sm">bolt</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- System Alerts Footer for Mobile -->
+<div class="md:hidden mt-stack-lg px-4 py-8 glass-card rounded-2xl text-center">
+<p class="text-primary font-bold">Orchestrating Excellence</p>
+<p class="text-on-surface-variant text-sm mt-2">Eveno Admin Platform © 2024</p>
+</div>
+</main>
+<!-- Bottom Nav for Mobile -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-center px-4 md:hidden bg-white/70 dark:bg-inverse-surface/70 backdrop-blur-md border-t border-outline-variant/30 shadow-[0px_-10px_30px_rgba(0,0,0,0.04)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-micro-label text-micro-label">Overview</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-micro-label text-micro-label">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-micro-label text-micro-label">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-micro-label text-micro-label">Alerts</span>
+</a>
+</nav>
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+        });
+
+        menuClose.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+
+        // Simple animation on hover for glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0px 20px 40px rgba(0, 0, 0, 0.08)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0px 10px 30px rgba(0, 0, 0, 0.04)';
+            });
+        });
+    </script>
+</body></html>
