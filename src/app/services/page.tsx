@@ -30,7 +30,7 @@ export default function ServicesPage() {
 </div>
 </section>
 
-<section className="px-margin-mobile mt-stack-lg grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto">
+<section className="px-margin-mobile md:px-margin-desktop mt-stack-lg grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto pb-section-gap">
 
 <div className="glass-card rounded-3xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.04)] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]">
 <div className="relative h-64">

@@ -35,7 +35,7 @@ export default function VendorsPage() {
 </div>
 </section>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
 
 <div className="group relative flex flex-col bg-white rounded-3xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 hover:scale-[1.01]">
 <div className="relative aspect-[4/3] overflow-hidden">

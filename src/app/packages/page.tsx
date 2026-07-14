@@ -16,7 +16,7 @@ export default function PackagesPage() {
             </p>
 </section>
 
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg max-w-container-max mx-auto px-margin-mobile items-stretch">
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop items-stretch pb-section-gap">
 
 <article className="glass-card w-full rounded-3xl p-stack-lg shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-outline-variant/20 transition-all duration-300 hover:scale-[1.02]">
 <div className="flex justify-between items-start mb-stack-md">
