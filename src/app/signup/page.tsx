@@ -39,6 +39,14 @@ export default async function SignupPage({ searchParams }: { searchParams: Promi
 )}
 
 <div className="space-y-2">
+<label className="font-micro-label text-micro-label text-outline uppercase tracking-widest ml-1" htmlFor="name">Full Name</label>
+<div className="relative group">
+<span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+<input name="name" required className="w-full h-14 pl-12 pr-4 bg-white/50 border-outline-variant rounded-xl focus:ring-primary focus:border-primary transition-all duration-300 input-focus-effect placeholder:text-outline-variant" id="name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+
+<div className="space-y-2">
 <label className="font-micro-label text-micro-label text-outline uppercase tracking-widest ml-1" htmlFor="email">Email Address</label>
 <div className="relative group">
 <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>

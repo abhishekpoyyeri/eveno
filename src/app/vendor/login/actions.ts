@@ -4,12 +4,12 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 
-export async function login(formData: FormData) {
+export async function vendorLogin(formData: FormData) {
   const email = formData.get('email') as string
   const password = formData.get('password') as string
 
   if (!email || !password) {
-    return redirect('/login?error=Email and password are required')
+    return redirect('/vendor/login?error=Email and password are required')
   }
 
   const supabase = await createClient()
@@ -20,11 +20,9 @@ export async function login(formData: FormData) {
   })
 
   if (error) {
-    return redirect(`/login?error=${encodeURIComponent(error.message)}`)
+    return redirect(`/vendor/login?error=${encodeURIComponent(error.message)}`)
   }
 
   revalidatePath('/', 'layout')
-  redirect('/')
+  redirect('/vendor/register')
 }
-
-

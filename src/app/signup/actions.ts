@@ -5,11 +5,12 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 
 export async function signup(formData: FormData) {
+  const name = formData.get('name') as string
   const email = formData.get('email') as string
   const password = formData.get('password') as string
 
-  if (!email || !password) {
-    return redirect('/signup?error=Email and password are required')
+  if (!email || !password || !name) {
+    return redirect('/signup?error=Name, email, and password are required')
   }
 
   const supabase = await createClient()
@@ -17,6 +18,11 @@ export async function signup(formData: FormData) {
   const { error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      data: {
+        full_name: name
+      }
+    }
   })
 
   if (error) {
@@ -24,5 +30,5 @@ export async function signup(formData: FormData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/vendor/dashboard')
+  redirect('/')
 }
