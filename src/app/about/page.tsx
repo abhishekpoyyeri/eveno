@@ -120,7 +120,7 @@ export default function AboutUsPage() {
 <div className="w-full md:w-1/2">
 <h2 className="font-display-lg text-headline-md text-primary mb-6">A Legacy of Distinction</h2>
 <p className="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
-                            For over a decade, Eveno has been the silent architect behind the world's most prestigious gatherings. From intimate royal galas to expansive corporate summits, our approach remains singular: absolute perfection in every frame.
+                            For over a decade, Evenow has been the silent architect behind the world's most prestigious gatherings. From intimate royal galas to expansive corporate summits, our approach remains singular: absolute perfection in every frame.
                         </p>
 <ul className="space-y-4 mb-8">
 <li className="flex items-center gap-3">

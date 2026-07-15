@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-8">
         <div className="flex flex-col items-center md:items-start gap-4">
           <span className="font-display-lg text-headline-md text-primary">
-            Eveno
+            Evenow
           </span>
           <p className="font-body-md text-body-md text-on-surface-variant">
-            © 2024 Eveno Orchestration. All rights reserved.
+            © 2024 Evenow Orchestration. All rights reserved.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-stack-lg">

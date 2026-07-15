@@ -9,7 +9,7 @@ export default function Header() {
         <div className="flex items-center gap-stack-lg">
           <Link href="/" className="no-underline">
             <span className="font-display-lg text-headline-md tracking-tighter text-primary cursor-pointer">
-              Eveno
+              Evenow
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-stack-lg">

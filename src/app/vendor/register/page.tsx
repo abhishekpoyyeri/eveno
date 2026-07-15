@@ -37,7 +37,7 @@ export default function VendorRegisterPage() {
 </div>
 
 <div className="mb-stack-lg">
-<h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-sm">Grow your business with Eveno</h1>
+<h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-sm">Grow your business with Evenow</h1>
 <p className="text-on-surface-variant font-body-lg">Tell us more about your company to start receiving high-end event inquiries.</p>
 </div>
 

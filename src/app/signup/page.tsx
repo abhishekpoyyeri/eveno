@@ -1,11 +1,10 @@
-
 import React from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { login } from './actions';
-import Link from 'next/link';
+import { signup } from './actions';
 
-export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+export default async function SignupPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
   const params = await searchParams;
   const error = params?.error;
   return (
@@ -29,8 +28,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 
 <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/20 rounded-full blur-[80px]"></div>
 <header className="mb-stack-lg">
-<h2 className="font-headline-md text-headline-md text-primary mb-2">Welcome Back</h2>
-<p className="font-body-md text-on-surface-variant">Sign in to manage your luxury events.</p>
+<h2 className="font-headline-md text-headline-md text-primary mb-2">Create an Account</h2>
+<p className="font-body-md text-on-surface-variant">Join us to start managing luxury events.</p>
 </header>
 <form className="space-y-5">
 {error && (
@@ -50,7 +49,6 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 <div className="space-y-2">
 <div className="flex justify-between items-center px-1">
 <label className="font-micro-label text-micro-label text-outline uppercase tracking-widest" htmlFor="password">Password</label>
-<a className="text-xs font-bold text-primary hover:text-secondary transition-colors" href="#">Forgot Password?</a>
 </div>
 <div className="relative group">
 <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
@@ -61,8 +59,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 </div>
 </div>
 
-<button formAction={login} type="submit" className="w-full h-14 mt-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group">
-                        Sign In
+<button formAction={signup} type="submit" className="w-full h-14 mt-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group">
+                        Sign Up
                         <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </button>
 
@@ -92,8 +90,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
 
 <div className="mt-8 text-center">
 <p className="font-body-md text-white/90">
-                    Don't have an account? 
-                    <Link href="/signup" className="font-bold text-white underline underline-offset-4 decoration-secondary hover:text-secondary transition-colors ml-1">Sign Up</Link>
+                    Already have an account? 
+                    <Link href="/login" className="font-bold text-white underline underline-offset-4 decoration-secondary hover:text-secondary transition-colors ml-1">Sign In</Link>
 </p>
 </div>
 </form>

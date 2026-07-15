@@ -1,10 +1,10 @@
-# Eveno - Luxury Event Orchestration
+# Evenow - Luxury Event Orchestration
 
 This is a modern Next.js 15 application built with React 19 and Tailwind CSS v4, utilizing Supabase for backend authentication.
 
 ## Design System & Architecture
 
-Eveno relies on a meticulously crafted design system to ensure a premium, consistent, and highly polished user experience. Below are the architectural guidelines for developing in this repository.
+Evenow relies on a meticulously crafted design system to ensure a premium, consistent, and highly polished user experience. Below are the architectural guidelines for developing in this repository.
 
 ### 1. Theme & Colors
 The application uses a **Pearl and Indigo** color palette to invoke a sense of luxury and professionalism.
@@ -55,7 +55,7 @@ For standard content sections and grid lists (e.g., Vendor grids or Package list
 
 ## Features & Implementation Methods
 
-Below is a breakdown of the core features of the Eveno application and the specific technical methods used to implement them.
+Below is a breakdown of the core features of the Evenow application and the specific technical methods used to implement them.
 
 ### 1. Authentication (Login / Sign Up)
 - **Method:** Supabase Server-Side Rendering (SSR) Auth.

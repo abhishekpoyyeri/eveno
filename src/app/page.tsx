@@ -285,7 +285,7 @@ export default function Home() {
               </h2>
               <p className="font-body-lg text-body-lg text-on-secondary-container/90 mt-6 max-w-lg">
                 Whether you are hosting a private gala or looking to list your
-                venue, Eveno provides the tools for effortless orchestration.
+                venue, Evenow provides the tools for effortless orchestration.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-stack-lg">
                 <button className="w-full sm:w-auto px-10 py-5 bg-on-background text-white rounded-full font-bold text-lg hover-lift shadow-xl">

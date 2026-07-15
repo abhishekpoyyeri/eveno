@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Eveno | Plan Your Perfect Celebration",
+  title: "Evenow | Plan Your Perfect Celebration",
   description: "Premium event marketplace connecting you with trusted vendors.",
 };
 

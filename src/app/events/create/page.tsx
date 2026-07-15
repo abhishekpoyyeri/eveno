@@ -110,7 +110,7 @@ export default function EventCreatePage() {
 <div className="absolute inset-0 bg-cover bg-center" data-alt="A lush, ultra-luxury wedding venue setup in a grand ballroom with crystal chandeliers, deep purple orchids, and soft golden ambient lighting. The atmosphere is sophisticated and professional, reflecting high-end event planning. High-contrast photography style with a focus on elegant details and clean white linens." style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD45zBE1cXMS_A1gCeIA7a7XFYAAAGnWe1OXu_QBlA6PToC2qIS6NbUY8cJgDYlg04FkLaODYaoL8SUDtZOch1zkW8u5A3gqvI2V93chK3gNX79CGS453B9YWnmDb-jQ624w5cMaqcp775rgoG-p1dISrjd_lJAeq7DkfeAyo9vmab8x26xwl6kwFeVU7fOEI3YX0TS6mzP_gVYUVkUQwfyw3bNkYUkGeYN7Gpo3oytKZBBjaAbIXeapYN-d5dKOxmAs2gLIVcMQpg')" }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-stack-md">
 <p className="text-white font-headline-md text-[18px]">Visual Inspiration</p>
-<p className="text-white/80 text-micro-label">Let Eveno suggest styles based on your details.</p>
+<p className="text-white/80 text-micro-label">Let Evenow suggest styles based on your details.</p>
 </div>
 </div>
 </div>

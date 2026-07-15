@@ -85,7 +85,7 @@ export default function AdminDashboardPage() {
 <td className="px-stack-lg py-5">
 <div className="flex items-center gap-3">
 <div className="w-10 h-10 rounded-lg bg-surface-container-high overflow-hidden">
-<img className="w-full h-full object-cover" data-alt="A luxury catering company's professional logo and sample hors d'oeuvres. The imagery is bright, elegant, and uses high-end styling with white linens and gold accents, fitting the sophisticated modernism of the Eveno brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwV4Z2vMXmG_oUA8QDSgSFB4bJGxUk0K4odGJNctqct8wNpVsnTcJwl7Aeu-T_D0eK0kFVOeeVlkSVpWdu0RIM_bmY3DLND1UycGMCqL9o1YeukFNffy6AdyoSOGG1BmbM-nkXsu9Lc6F4g9DeDsrWVe7-k8djiNo95pHxdM_yBYFB92RMCJA3BWplBV--ZiU3xc3s9Y-7CsdwL25YywNycOa5SOjLDQr7CwUKBEmBhjfs0r68kEAL_yS0yFtpccmDxMiWQ9yb5Hc"/>
+<img className="w-full h-full object-cover" data-alt="A luxury catering company's professional logo and sample hors d'oeuvres. The imagery is bright, elegant, and uses high-end styling with white linens and gold accents, fitting the sophisticated modernism of the Evenow brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwV4Z2vMXmG_oUA8QDSgSFB4bJGxUk0K4odGJNctqct8wNpVsnTcJwl7Aeu-T_D0eK0kFVOeeVlkSVpWdu0RIM_bmY3DLND1UycGMCqL9o1YeukFNffy6AdyoSOGG1BmbM-nkXsu9Lc6F4g9DeDsrWVe7-k8djiNo95pHxdM_yBYFB92RMCJA3BWplBV--ZiU3xc3s9Y-7CsdwL25YywNycOa5SOjLDQr7CwUKBEmBhjfs0r68kEAL_yS0yFtpccmDxMiWQ9yb5Hc"/>
 </div>
 <span className="font-bold text-primary">Royal Culinary Arts</span>
 </div>
@@ -196,7 +196,7 @@ export default function AdminDashboardPage() {
 
 <div className="md:hidden mt-stack-lg px-4 py-8 glass-card rounded-2xl text-center">
 <p className="text-primary font-bold">Orchestrating Excellence</p>
-<p className="text-on-surface-variant text-sm mt-2">Eveno Admin Platform © 2024</p>
+<p className="text-on-surface-variant text-sm mt-2">Evenow Admin Platform © 2024</p>
 </div>
 </main>
       <Footer />
