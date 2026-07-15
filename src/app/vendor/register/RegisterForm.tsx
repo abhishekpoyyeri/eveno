@@ -202,14 +202,14 @@ export default function RegisterForm() {
                       <button 
                         type="button" 
                         onClick={() => setPrimaryIndex(idx)} 
-                        className={`absolute bottom-2 left-2 text-xs font-bold px-2 py-1 rounded shadow ${primaryIndex === idx ? 'bg-primary text-white' : 'bg-white/80 text-primary opacity-0 group-hover:opacity-100'}`}
+                        className={`absolute bottom-2 left-2 text-xs md:text-sm font-bold px-3 py-1.5 md:px-2 md:py-1 rounded shadow-md transition-opacity active:scale-95 ${primaryIndex === idx ? 'bg-primary text-white opacity-100' : 'bg-white/90 text-primary opacity-100 md:opacity-0 md:group-hover:opacity-100'}`}
                       >
                         {primaryIndex === idx ? 'Primary' : 'Set Primary'}
                       </button>
 
                       {/* Remove Button */}
-                      <button type="button" onClick={() => removeFile(idx)} className="absolute top-2 right-2 bg-black/50 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="material-symbols-outlined text-sm">close</span>
+                      <button type="button" onClick={() => removeFile(idx)} className="absolute top-2 right-2 bg-black/60 text-white rounded-full p-2 md:p-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity active:scale-95">
+                        <span className="material-symbols-outlined text-base md:text-sm">close</span>
                       </button>
                     </div>
                   ))}
