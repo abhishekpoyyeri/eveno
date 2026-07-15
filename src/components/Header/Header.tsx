@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-outline-variant/20 shadow-none">
-      <nav className="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+      <nav className="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex items-center gap-stack-lg">
           <Link href="/" className="no-underline">
             <span className="font-display-lg text-headline-md tracking-tighter text-primary cursor-pointer">
