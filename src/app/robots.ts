@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         '/vendor/register',
       ],
     },
-    sitemap: 'https://evenow.example.com/sitemap.xml',
+    sitemap: 'https://eveno-beta.vercel.app/sitemap.xml',
   };
 }

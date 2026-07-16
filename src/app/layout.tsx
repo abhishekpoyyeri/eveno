@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://evenow.example.com'),
+  metadataBase: new URL('https://eveno-beta.vercel.app'),
   title: {
     default: "Evenow | Premium Event Orchestration & Vendor Marketplace",
     template: "%s | Evenow",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Evenow | Premium Event Orchestration & Vendor Marketplace",
     description: "The ultimate orchestration platform for high-end event planners and hosts. Discover premium venues and world-class vendors in one curated space.",
-    url: 'https://evenow.example.com',
+    url: 'https://eveno-beta.vercel.app',
     siteName: 'Evenow',
     locale: 'en_US',
     type: 'website',
