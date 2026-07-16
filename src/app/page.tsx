@@ -288,12 +288,16 @@ export default function Home() {
                 venue, Evenow provides the tools for effortless orchestration.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-stack-lg">
-                <button className="w-full sm:w-auto px-10 py-5 bg-on-background text-white rounded-full font-bold text-lg hover-lift shadow-xl">
-                  Get Started Now
-                </button>
-                <button className="w-full sm:w-auto px-10 py-5 bg-white/20 backdrop-blur-md text-on-secondary-container border border-white/30 rounded-full font-bold text-lg hover:bg-white/30 transition-colors">
-                  Join as a Vendor
-                </button>
+                <Link href="/signup" className="w-full sm:w-auto">
+                  <button className="w-full px-10 py-5 bg-on-background text-white rounded-full font-bold text-lg hover-lift shadow-xl">
+                    Get Started Now
+                  </button>
+                </Link>
+                <Link href="/vendor/login" className="w-full sm:w-auto">
+                  <button className="w-full px-10 py-5 bg-white/20 backdrop-blur-md text-on-secondary-container border border-white/30 rounded-full font-bold text-lg hover:bg-white/30 transition-colors">
+                    Join as a Vendor
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="relative z-10 hidden lg:block w-96 h-96 group-hover:scale-105 transition-transform duration-700">
