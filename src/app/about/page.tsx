@@ -1,5 +1,10 @@
-
+import type { Metadata } from "next";
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Evenow's legacy of excellence in luxury event planning, our philosophy, and our curated network of premium vendors.",
+};
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 

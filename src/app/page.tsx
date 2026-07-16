@@ -1,42 +1,18 @@
-"use client";
-
-import { useEffect } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import FadeInObserver from "@/components/FadeInObserver";
+
+export const metadata: Metadata = {
+  title: "Evenow | Premium Event Orchestration & Vendor Marketplace",
+  description: "The ultimate orchestration platform for high-end event planners and hosts. Discover premium venues and world-class vendors in one curated space.",
+};
 
 export default function Home() {
-  useEffect(() => {
-    // Intersection Observer for fade-in effects
-    const observerOptions = {
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0");
-          entry.target.classList.remove("opacity-0", "translate-y-10");
-        }
-      });
-    }, observerOptions);
-
-    const elements = document.querySelectorAll("section > div");
-    elements.forEach((el) => {
-      el.classList.add(
-        "transition-all",
-        "duration-1000",
-        "opacity-0",
-        "translate-y-10"
-      );
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
+      <FadeInObserver />
       <Header />
       <main className="pt-20">
         <section className="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop py-stack-lg overflow-hidden">

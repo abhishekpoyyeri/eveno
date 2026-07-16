@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Sign Up | Evenow",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 import Link from 'next/link';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';

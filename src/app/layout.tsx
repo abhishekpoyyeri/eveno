@@ -13,8 +13,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Evenow | Plan Your Perfect Celebration",
-  description: "Premium event marketplace connecting you with trusted vendors.",
+  metadataBase: new URL('https://evenow.example.com'),
+  title: {
+    default: "Evenow | Premium Event Orchestration & Vendor Marketplace",
+    template: "%s | Evenow",
+  },
+  description: "The ultimate orchestration platform for high-end event planners and hosts. Discover premium venues and world-class vendors in one curated space.",
+  keywords: ["event planning", "luxury events", "wedding planner", "premium venues", "event vendors", "party planning", "celebration orchestration", "catering", "event photography", "event decoration"],
+  authors: [{ name: "Evenow" }],
+  openGraph: {
+    title: "Evenow | Premium Event Orchestration & Vendor Marketplace",
+    description: "The ultimate orchestration platform for high-end event planners and hosts. Discover premium venues and world-class vendors in one curated space.",
+    url: 'https://evenow.example.com',
+    siteName: 'Evenow',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Evenow | Premium Event Orchestration",
+    description: "Discover premium venues and world-class vendors in one curated space.",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,10 @@
-
+import type { Metadata } from "next";
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Event Services",
+  description: "Explore our comprehensive event services including venue booking, premium catering, expert photography, and custom luxury decoration.",
+};
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 

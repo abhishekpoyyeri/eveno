@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Premium Vendors Directory",
+  description: "Discover our hand-picked selection of premium event vendors, from world-class caterers to visionary decorators and luxury venues.",
+};
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { createClient } from '@/utils/supabase/server';

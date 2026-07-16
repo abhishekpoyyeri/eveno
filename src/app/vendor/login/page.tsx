@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Vendor Login | Evenow",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { vendorLogin } from './actions';
