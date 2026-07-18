@@ -123,22 +123,11 @@ A-la-carte services that can be added to packages or booked individually.
 
 ---
 
-## Getting Started
 
-First, install dependencies:
-```bash
-npm install
-```
 
 Set up your `.env` file with Supabase credentials:
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-Run the development server:
-```bash
-npm run dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
